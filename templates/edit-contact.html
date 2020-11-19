@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+<!-- Page title -->
+{% block title %}{{ super() }} Edit your contact | Flask Contact App {% endblock %}
+
+{% block body %}
+
+<br>
+<form action="/update_contact/{{contact.0}}" method="POST">
+    <input type="text" name="fullname" placeholder="Fullname" value="{{contact.1}}" required>
+    <input type="number" name="phone" placeholder="Phone" value="{{contact.2}}" required>
+    <input type="email" name="email" placeholder="Email" value="{{contact.3}}">
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
